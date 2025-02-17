@@ -38,6 +38,7 @@ const MainPage = () => {
         initialValues={{ remember: true }}
         onFinish={onFinish}
         autoComplete="off"
+        style={{ marginTop: '50px' }}
       >
         <Form.Item
           label="Name"
@@ -61,8 +62,8 @@ const MainPage = () => {
           </Button>
         </Form.Item>
       </Form>
-      {formSubmitStatus === 'success' && <Alert message="Запрос успешно отправлен" type="success" showIcon />}
-      {formSubmitStatus === 'failure' && <Alert message="Запрос провален!" type="error" showIcon />}
+      {formSubmitStatus === 'success' ? <Alert message="Запрос успешно отправлен" type="success" showIcon /> : null}
+      {formSubmitStatus === 'failure' ? <Alert message="Запрос провален!" type="error" showIcon /> : null}
     </div>
   );
   
